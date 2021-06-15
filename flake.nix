@@ -18,8 +18,9 @@
     in
     {
       lib = lib.extend (final: prev: {
-
         nixos = import ./nixos/lib { lib = final; };
+        makeSystemTarball = import ./nixos/lib/make-system-tarball.nix;
+        makeDiskImage = import ./nixos/lib/make-disk-image.nix;
 
         nixosSystem = { modules, ... } @ args:
           import ./nixos/lib/eval-config.nix (args // {
