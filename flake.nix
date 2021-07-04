@@ -22,6 +22,9 @@
         makeSystemTarball = import ./nixos/lib/make-system-tarball.nix;
         makeDiskImage = import ./nixos/lib/make-disk-image.nix;
 
+        sd-image-aarch64-new-kernel =
+          import ./nixos/modules/installer/sd-card/sd-image-aarch64-new-kernel.nix;
+
         nixosSystem = { modules, ... } @ args:
           import ./nixos/lib/eval-config.nix (args // {
             modules =
