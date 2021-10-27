@@ -930,6 +930,7 @@ let
       # This always can can be replaced by the actual native driver.
       # Keeping it a built-in ensures it will be used if possible.
       FB_SIMPLE = yes;
+      DRM_SIMPLEDRM = no;
 
     } // optionalAttrs (versionAtLeast version "5.4" && (stdenv.hostPlatform.system == "x86_64-linux" || stdenv.hostPlatform.system == "aarch64-linux")) {
       # Required for various hardware features on Chrome OS devices
