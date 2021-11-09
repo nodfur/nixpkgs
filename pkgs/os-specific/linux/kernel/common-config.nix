@@ -882,8 +882,8 @@ let
       HMM_MIRROR = whenAtLeast "5.3" yes;
       DRM_AMDGPU_USERPTR = whenAtLeast "5.3" yes;
 
-      PREEMPT = no;
-      PREEMPT_VOLUNTARY = yes;
+      PREEMPT = mkMerge [(whenOlder "5.15" no) (whenAtLeast "5.16" yes)];
+      PREEMPT_VOLUNTARY = whenOlder "5.16" yes;
 
       X86_AMD_PLATFORM_DEVICE = yes;
       X86_PLATFORM_DRIVERS_DELL = whenAtLeast "5.12" yes;
